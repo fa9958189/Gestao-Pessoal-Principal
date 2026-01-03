@@ -67,7 +67,10 @@ export default function PricingSection() {
               <p className="text-slate-200 text-sm">Economize e valide sua nova rotina com suporte completo.</p>
             </div>
             <a
-              href="#cta"
+              href="https://wa.me/5563992393705"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir conversa no WhatsApp para garantir acesso"
               className="inline-flex items-center justify-center w-full py-3 rounded-xl bg-white text-dark font-semibold text-lg shadow-2xl transition hover:-translate-y-0.5"
             >
               Garantir meu acesso

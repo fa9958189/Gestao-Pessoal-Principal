@@ -30,7 +30,10 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-3">
           <a
             className="inline-flex justify-center items-center px-6 py-3 rounded-xl bg-primary text-white font-semibold shadow-glow transition hover:-translate-y-0.5"
-            href="#planos"
+            href="https://wa.me/5563992393705"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Abrir conversa no WhatsApp para ter controle agora"
           >
             Quero ter controle agora
           </a>
