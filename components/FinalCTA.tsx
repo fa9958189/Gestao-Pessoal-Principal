@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SparklesIcon } from "./icons";
+import { SparklesIcon, WhatsAppIcon } from "./icons";
 
 export default function FinalCTA() {
   return (
@@ -27,10 +27,22 @@ export default function FinalCTA() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="#planos"
+              href="https://wa.me/5563992393705"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Começar agora pelo WhatsApp"
               className="px-8 py-3 rounded-xl bg-white text-dark font-bold text-lg shadow-2xl transition hover:-translate-y-0.5"
             >
               Começar agora
+            </a>
+            <a
+              href="https://wa.me/5563992393705?text=%C3%93l%C3%A1!%20Tenho%20interesse%20no%20Gest%C3%A3o%20Pessoal%20e%20vim%20pelo%20site.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Falar com a equipe comercial pelo WhatsApp"
+              className="px-8 py-3 rounded-xl bg-emerald-500/20 text-emerald-100 border border-emerald-400/50 font-semibold flex items-center justify-center gap-2 hover:-translate-y-0.5 transition"
+            >
+              <WhatsAppIcon className="w-5 h-5" /> Falar com a equipe comercial
             </a>
             <a href="#solucao" className="px-8 py-3 rounded-xl border border-white/20 text-white font-semibold">
               Ver como funciona
