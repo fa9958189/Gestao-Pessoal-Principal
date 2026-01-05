@@ -59,12 +59,12 @@ export default function PricingSection() {
               Oferta de lançamento
             </div>
             <div>
-              <p className="text-sm text-slate-300">2 meses de acesso</p>
+              <p className="text-sm text-slate-300">1 semana grátis + 1º mês por R$ 79,90</p>
               <div className="flex items-end gap-2">
                 <span className="text-5xl font-extrabold">R$ 79,90</span>
                 <span className="text-slate-300 mb-2">à vista</span>
               </div>
-              <p className="text-slate-200 text-sm">Economize e valide sua nova rotina com suporte completo.</p>
+              <p className="text-slate-200 text-sm">Após 7 dias grátis, você paga R$ 79,90 no primeiro mês. No mês seguinte, R$ 120,00/mês.</p>
             </div>
             <a
               href="https://wa.me/5563992393705"
