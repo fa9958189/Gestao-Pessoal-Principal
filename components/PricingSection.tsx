@@ -56,10 +56,8 @@ export default function PricingSection() {
               ))}
             </ul>
             <a
-              href="https://wa.me/5563992393705"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Abrir conversa no WhatsApp para garantir acesso"
+              href="https://kiwify.app/X4HKTVu"
+              aria-label="Garantir acesso pelo checkout da Kiwify"
               className="inline-flex items-center justify-center w-full py-3 rounded-xl bg-white text-dark font-semibold text-lg shadow-2xl transition hover:-translate-y-0.5"
             >
               Garantir meu acesso
