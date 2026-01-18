@@ -27,10 +27,8 @@ export default function FinalCTA() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://wa.me/5563992393705?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Gest%C3%A3o%20Pessoal%20e%20vim%20pelo%20site.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Começar agora pelo WhatsApp"
+              href="https://kiwify.app/X4HKTVu"
+              aria-label="Começar agora pelo checkout da Kiwify"
               className="px-8 py-3 rounded-xl bg-white text-dark font-bold text-lg shadow-2xl transition hover:-translate-y-0.5"
             >
               Começar agora
