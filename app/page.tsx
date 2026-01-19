@@ -41,6 +41,13 @@ function FinalizarOverlay({ onClose }: FinalizarOverlayProps) {
             Após finalizar o checkout, volte nesta página e entre em contato com a nossa equipe comercial para liberar o
             seu acesso à plataforma.
           </div>
+          <div className="rounded-xl border border-emerald-400/30 bg-gradient-to-r from-emerald-500/10 via-primary/10 to-transparent px-4 py-3 text-sm text-slate-100 shadow-[0_0_18px_rgba(16,185,129,0.15)]">
+            <p className="text-base font-semibold text-emerald-200">Quer 7 dias grátis para testar?</p>
+            <p className="mt-1 text-slate-200">
+              Entre em contato com a nossa equipe comercial antes ou após o checkout para solicitar a liberação do
+              período de teste gratuito.
+            </p>
+          </div>
           <div className="space-y-2 text-sm text-slate-200">
             <p>1) Clique em “Ir para o checkout” e finalize o pagamento.</p>
             <p>2) Após concluir, volte aqui e clique em “Entrar em contato com a equipe comercial”.</p>
