@@ -56,7 +56,7 @@ function FinalizarOverlay({ onClose }: FinalizarOverlayProps) {
             <button
               type="button"
               onClick={() => {
-                window.location.href = "https://kiwify.app/X4HKTVu";
+                window.location.href = "https://pay.kiwify.com.br/yBaS3an";
               }}
               className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-dark font-semibold transition hover:-translate-y-0.5"
             >
