@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { CheckIcon } from "./icons";
-import Link from "next/link";
 
 const features = [
   "Painel financeiro e metas",
@@ -14,7 +13,11 @@ const features = [
   "Sem contrato e sem fidelidade"
 ];
 
-export default function PricingSection() {
+type PricingSectionProps = {
+  onOpenOverlay: () => void;
+};
+
+export default function PricingSection({ onOpenOverlay }: PricingSectionProps) {
   return (
     <section id="planos" className="section-shell py-16">
       <div className="text-center mb-10 space-y-3">
@@ -56,13 +59,14 @@ export default function PricingSection() {
                 </li>
               ))}
             </ul>
-            <Link
-              href="/finalizar"
-              aria-label="Garantir acesso e ir para a página de finalização"
+            <button
+              type="button"
+              onClick={onOpenOverlay}
+              aria-label="Garantir acesso e abrir a etapa de finalização"
               className="inline-flex items-center justify-center w-full py-3 rounded-xl bg-white text-dark font-semibold text-lg shadow-2xl transition hover:-translate-y-0.5"
             >
               Garantir meu acesso
-            </Link>
+            </button>
             <div className="text-xs text-slate-200/80 leading-relaxed">
               Bônus: vídeos + configuração guiada + templates de rotina + automações prontas no WhatsApp.
             </div>
