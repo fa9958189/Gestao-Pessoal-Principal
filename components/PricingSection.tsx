@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { CheckIcon } from "./icons";
+import Link from "next/link";
 
 const features = [
   "Painel financeiro e metas",
@@ -55,13 +56,13 @@ export default function PricingSection() {
                 </li>
               ))}
             </ul>
-            <a
-              href="https://kiwify.app/X4HKTVu"
-              aria-label="Garantir acesso pelo checkout da Kiwify"
+            <Link
+              href="/finalizar"
+              aria-label="Garantir acesso e ir para a página de finalização"
               className="inline-flex items-center justify-center w-full py-3 rounded-xl bg-white text-dark font-semibold text-lg shadow-2xl transition hover:-translate-y-0.5"
             >
               Garantir meu acesso
-            </a>
+            </Link>
             <div className="text-xs text-slate-200/80 leading-relaxed">
               Bônus: vídeos + configuração guiada + templates de rotina + automações prontas no WhatsApp.
             </div>
