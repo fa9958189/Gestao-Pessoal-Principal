@@ -33,8 +33,8 @@ export default function PricingSection() {
           transition={{ duration: 0.6 }}
           className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-primary/40 bg-gradient-to-br from-primary/25 via-primary/10 to-accent/10 p-7 shadow-glow"
         >
-          <div className="absolute -left-10 -top-10 w-32 h-32 bg-primary/30 rounded-full blur-3xl" />
-          <div className="absolute right-0 bottom-0 w-28 h-28 bg-accent/40 rounded-full blur-3xl" />
+          <div className="absolute -left-10 -top-10 w-32 h-32 bg-primary/30 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute right-0 bottom-0 w-28 h-28 bg-accent/40 rounded-full blur-3xl pointer-events-none" />
           <div className="relative z-10 space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-sm font-semibold">
               Oferta de lançamento
