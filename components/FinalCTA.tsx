@@ -14,7 +14,7 @@ export default function FinalCTA() {
         transition={{ duration: 0.6 }}
         className="relative overflow-hidden glass rounded-2xl p-10 border border-primary/30"
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/5 to-accent/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/5 to-accent/10 pointer-events-none" />
         <div className="relative z-10 space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-sm font-semibold">
             <SparklesIcon className="w-4 h-4" /> Você a um passo do controle total
