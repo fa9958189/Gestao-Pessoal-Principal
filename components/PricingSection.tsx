@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { CheckIcon } from "./icons";
 
 const features = [
@@ -59,14 +60,22 @@ export default function PricingSection({ onOpenOverlay }: PricingSectionProps) {
                 </li>
               ))}
             </ul>
-            <button
-              type="button"
-              onClick={onOpenOverlay}
-              aria-label="Garantir acesso e abrir a etapa de finalização"
-              className="inline-flex items-center justify-center w-full py-3 rounded-xl bg-white text-dark font-semibold text-lg shadow-2xl transition hover:-translate-y-0.5"
-            >
-              Garantir meu acesso
-            </button>
+            <div className="space-y-3">
+              <button
+                type="button"
+                onClick={onOpenOverlay}
+                aria-label="Garantir acesso e abrir a etapa de finalização"
+                className="inline-flex items-center justify-center w-full py-3 rounded-xl bg-white text-dark font-semibold text-lg shadow-2xl transition hover:-translate-y-0.5"
+              >
+                Garantir meu acesso
+              </button>
+              <Link
+                href="/videoaulas"
+                className="inline-flex items-center justify-center w-full rounded-xl border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+              >
+                Assistir videoaula para aprender a configurar o sistema Gestão Pessoal
+              </Link>
+            </div>
             <div className="text-xs text-slate-200/80 leading-relaxed">
               Bônus: vídeos + configuração guiada + templates de rotina + automações prontas no WhatsApp.
             </div>
