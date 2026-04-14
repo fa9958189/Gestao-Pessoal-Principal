@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { CheckIcon } from "./icons";
 
 const features = [
@@ -46,11 +45,11 @@ export default function PricingSection({ onOpenOverlay }: PricingSectionProps) {
             <div>
               <p className="text-sm text-slate-300">Acesso completo com IA, lembretes e integrações</p>
               <div className="flex items-end gap-2">
-                <span className="text-5xl font-extrabold">R$ 79,90</span>
+                <span className="text-5xl font-extrabold">R$ 80,00</span>
                 <span className="text-slate-300 mb-2">/ mês</span>
               </div>
               <p className="text-slate-200 text-sm">
-                Assinatura mensal por R$ 79,90. Cancele quando quiser, sem fidelidade.
+                Assinatura mensal por R$ 80,00. Cancele quando quiser, sem fidelidade.
               </p>
             </div>
             <ul className="space-y-2 text-sm text-slate-200">
@@ -60,7 +59,7 @@ export default function PricingSection({ onOpenOverlay }: PricingSectionProps) {
                 </li>
               ))}
             </ul>
-            <div className="space-y-3">
+            <div>
               <button
                 type="button"
                 onClick={onOpenOverlay}
@@ -69,12 +68,6 @@ export default function PricingSection({ onOpenOverlay }: PricingSectionProps) {
               >
                 Garantir meu acesso
               </button>
-              <Link
-                href="/videoaulas"
-                className="inline-flex items-center justify-center w-full rounded-xl border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
-              >
-                Assistir videoaula para aprender a configurar o sistema Gestão Pessoal
-              </Link>
             </div>
             <div className="text-xs text-slate-200/80 leading-relaxed">
               Bônus: vídeos + configuração guiada + templates de rotina + automações prontas no WhatsApp.
