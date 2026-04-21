@@ -11,13 +11,28 @@ const openStripeCheckout = (url: string) => {
   window.open(url, "_blank", "noopener,noreferrer");
 };
 
-const features = [
-  "Painel financeiro e metas",
-  "Agenda com WhatsApp",
-  "IA nutricional",
-  "Rotina de treinos e hábitos",
-  "Lembretes automáticos",
-  "Vídeos de configuração e automação (passo a passo)",
+const promoFeatures = [
+  "Painel financeiro inteligente com controle total do seu dinheiro",
+  "Agenda integrada com lembretes automáticos no WhatsApp",
+  "Planejamento completo de treinos semanais",
+  "Controle alimentar com acompanhamento de metas",
+  "Scanner de alimentos com inteligência artificial",
+  "Relatórios de evolução (financeiro, físico e rotina)",
+  "Lembretes automáticos diários para manter disciplina",
+  "Organização total da sua rotina em um só lugar",
+  "Sem contrato e sem fidelidade"
+];
+
+const normalFeatures = [
+  "Sistema completo de gestão pessoal",
+  "Controle financeiro detalhado com relatórios avançados",
+  "Planejamento de treinos com acompanhamento de evolução",
+  "Gestão alimentar com metas e monitoramento diário",
+  "Scanner de alimentos com inteligência artificial",
+  "Agenda inteligente com integração WhatsApp",
+  "Relatórios completos de desempenho",
+  "Organização total da sua vida em um único sistema",
+  "Suporte contínuo e melhorias constantes",
   "Sem contrato e sem fidelidade"
 ];
 
@@ -49,7 +64,7 @@ export default function PricingSection({ onOpenOverlay }: PricingSectionProps) {
           <div className="absolute right-0 bottom-0 w-28 h-28 bg-accent/40 rounded-full blur-3xl pointer-events-none" />
           <div className="relative z-10 space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-sm font-semibold">
-              🔥 Oferta de lançamento
+              🔥 Mais escolhido pelos usuários
             </div>
             <div>
               <p className="text-sm text-slate-300">Acesso completo com desconto especial por tempo limitado</p>
@@ -57,10 +72,13 @@ export default function PricingSection({ onOpenOverlay }: PricingSectionProps) {
                 <span className="text-5xl font-extrabold">R$ 49,90</span>
                 <span className="text-slate-300 mb-2">/ mês</span>
               </div>
-              <p className="text-slate-200 text-sm">Assinatura mensal com valor promocional. Cancele quando quiser.</p>
+              <p className="text-slate-200 text-sm">
+                ⚠️ Oferta promocional válida por 3 meses. Após esse período, o plano será ajustado automaticamente
+                para o valor normal.
+              </p>
             </div>
             <ul className="space-y-2 text-sm text-slate-200">
-              {features.map((feature) => (
+              {promoFeatures.map((feature) => (
                 <li key={feature} className="flex items-center gap-2">
                   <CheckIcon className="w-4 h-4 text-emerald-400" /> {feature}
                 </li>
@@ -101,7 +119,7 @@ export default function PricingSection({ onOpenOverlay }: PricingSectionProps) {
               <p className="text-slate-200 text-sm">Assinatura mensal por R$ 80,00. Cancele quando quiser, sem fidelidade.</p>
             </div>
             <ul className="space-y-2 text-sm text-slate-200">
-              {features.map((feature) => (
+              {normalFeatures.map((feature) => (
                 <li key={feature} className="flex items-center gap-2">
                   <CheckIcon className="w-4 h-4 text-emerald-400" /> {feature}
                 </li>
