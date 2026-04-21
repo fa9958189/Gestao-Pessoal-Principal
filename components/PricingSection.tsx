@@ -3,6 +3,14 @@
 import { motion } from "framer-motion";
 import { CheckIcon } from "./icons";
 
+const STRIPE_LINK_PROMO = "https://buy.stripe.com/6oUbJ350F5Xv7c51M5aR201";
+const STRIPE_LINK_NORMAL = "https://buy.stripe.com/fZu00l3WB99HfIBduNaR200";
+
+const openStripeCheckout = (url: string) => {
+  if (!url) return;
+  window.open(url, "_blank", "noopener,noreferrer");
+};
+
 const features = [
   "Painel financeiro e metas",
   "Agenda com WhatsApp",
@@ -62,7 +70,7 @@ export default function PricingSection({ onOpenOverlay }: PricingSectionProps) {
             <div>
               <button
                 type="button"
-                onClick={onOpenOverlay}
+                onClick={() => openStripeCheckout(STRIPE_LINK_NORMAL)}
                 aria-label="Garantir acesso e abrir a etapa de finalização"
                 className="inline-flex items-center justify-center w-full py-3 rounded-xl bg-white text-dark font-semibold text-lg shadow-2xl transition hover:-translate-y-0.5"
               >
