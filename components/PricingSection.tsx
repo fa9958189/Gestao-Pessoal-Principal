@@ -36,29 +36,69 @@ export default function PricingSection({ onOpenOverlay }: PricingSectionProps) {
           miúdas.
         </p>
       </div>
-      <div className="flex justify-center">
+
+      <div className="flex flex-col md:flex-row gap-5 justify-center items-stretch">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-primary/40 bg-gradient-to-br from-primary/25 via-primary/10 to-accent/10 p-7 shadow-glow"
+          className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-primary/50 bg-gradient-to-br from-primary/25 via-primary/10 to-accent/10 p-7 shadow-glow md:scale-[1.02]"
         >
           <div className="absolute -left-10 -top-10 w-32 h-32 bg-primary/30 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute right-0 bottom-0 w-28 h-28 bg-accent/40 rounded-full blur-3xl pointer-events-none" />
           <div className="relative z-10 space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-sm font-semibold">
-              Oferta de lançamento
+              🔥 Oferta de lançamento
             </div>
             <div>
-              <p className="text-sm text-slate-300">Acesso completo com IA, lembretes e integrações</p>
+              <p className="text-sm text-slate-300">Acesso completo com desconto especial por tempo limitado</p>
+              <div className="flex items-end gap-2">
+                <span className="text-5xl font-extrabold">R$ 49,90</span>
+                <span className="text-slate-300 mb-2">/ mês</span>
+              </div>
+              <p className="text-slate-200 text-sm">Assinatura mensal com valor promocional. Cancele quando quiser.</p>
+            </div>
+            <ul className="space-y-2 text-sm text-slate-200">
+              {features.map((feature) => (
+                <li key={feature} className="flex items-center gap-2">
+                  <CheckIcon className="w-4 h-4 text-emerald-400" /> {feature}
+                </li>
+              ))}
+            </ul>
+            <div>
+              <button
+                type="button"
+                onClick={() => openStripeCheckout(STRIPE_LINK_PROMO)}
+                aria-label="Garantir acesso promocional e abrir a etapa de finalização"
+                className="inline-flex items-center justify-center w-full py-3 rounded-xl bg-white text-dark font-semibold text-lg shadow-2xl transition hover:-translate-y-0.5"
+              >
+                Garantir plano promocional
+              </button>
+            </div>
+            <div className="text-xs text-slate-200/80 leading-relaxed">
+              Bônus: vídeos + configuração guiada + templates de rotina + automações prontas no WhatsApp.
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/20 via-primary/10 to-accent/10 p-7"
+        >
+          <div className="absolute -left-10 -top-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute right-0 bottom-0 w-28 h-28 bg-accent/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="relative z-10 space-y-4">
+            <div>
+              <p className="text-sm text-slate-300">Plano completo sem desconto promocional</p>
               <div className="flex items-end gap-2">
                 <span className="text-5xl font-extrabold">R$ 80,00</span>
                 <span className="text-slate-300 mb-2">/ mês</span>
               </div>
-              <p className="text-slate-200 text-sm">
-                Assinatura mensal por R$ 80,00. Cancele quando quiser, sem fidelidade.
-              </p>
+              <p className="text-slate-200 text-sm">Assinatura mensal por R$ 80,00. Cancele quando quiser, sem fidelidade.</p>
             </div>
             <ul className="space-y-2 text-sm text-slate-200">
               {features.map((feature) => (
@@ -71,10 +111,10 @@ export default function PricingSection({ onOpenOverlay }: PricingSectionProps) {
               <button
                 type="button"
                 onClick={() => openStripeCheckout(STRIPE_LINK_NORMAL)}
-                aria-label="Garantir acesso e abrir a etapa de finalização"
+                aria-label="Garantir acesso completo e abrir a etapa de finalização"
                 className="inline-flex items-center justify-center w-full py-3 rounded-xl bg-white text-dark font-semibold text-lg shadow-2xl transition hover:-translate-y-0.5"
               >
-                Garantir meu acesso
+                Garantir plano normal
               </button>
             </div>
             <div className="text-xs text-slate-200/80 leading-relaxed">
