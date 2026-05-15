@@ -109,7 +109,7 @@ export default function HomePage() {
       <AISection />
       <RemindersSection />
       <ResultsSection />
-      <PricingSection onOpenOverlay={handleOpenOverlay} />
+      <PricingSection />
       <FinalCTA onOpenOverlay={handleOpenOverlay} />
       {isOverlayOpen ? <FinalizarOverlay onClose={handleCloseOverlay} /> : null}
     </main>
