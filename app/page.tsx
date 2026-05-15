@@ -96,7 +96,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen space-y-8 pb-20">
       <a
-        href="/ativar-acesso"
+        href="/suporte"
         className="fixed right-5 top-5 z-40 rounded-xl border border-primary px-5 py-2.5 font-bold text-primary transition duration-300 hover:bg-primary hover:text-slate-950"
       >
         Suporte
