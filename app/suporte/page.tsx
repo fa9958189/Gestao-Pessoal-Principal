@@ -110,6 +110,21 @@ const tutorialCategories: TutorialCategory[] = [
       videoUrl: "https://youtu.be/hmocbENCZxA",
     },
   },
+  {
+    name: "Usuário",
+    step: "7️⃣",
+    eyebrow: "Gestão de acesso",
+    accent: "from-cyan-400 via-violet-500 to-emerald-400",
+    tutorial: {
+      id: 7,
+      title: "Usuário",
+      description:
+        "Aprenda a cadastrar, editar e gerenciar usuários dentro da plataforma de forma rápida e organizada.",
+      duration: "5 min",
+      youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_USUARIO",
+      videoUrl: "https://youtu.be/mr4EY2viapU",
+    },
+  },
 ];
 
 function PlayIcon() {
@@ -262,7 +277,11 @@ export default function SuportePage() {
 
   const handleWatchTutorial = (tutorial: Tutorial) => {
     if (tutorial.videoUrl) {
-      window.open(tutorial.videoUrl, "_blank", "noopener,noreferrer");
+      const videoLink = document.createElement("a");
+      videoLink.href = tutorial.videoUrl;
+      videoLink.target = "_blank";
+      videoLink.rel = "noopener noreferrer";
+      videoLink.click();
       return;
     }
 
