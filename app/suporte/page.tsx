@@ -100,12 +100,12 @@ const tutorialCategories: TutorialCategory[] = [
         youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_ALIMENTACAO_REFEICOES"
       },
       {
-        title: "Como usar a IA alimentar",
-        description: "Entenda como aproveitar a inteligência artificial para acelerar registros.",
-        duration: "9 min",
-        level: "Avançado",
-        videoPlaceholder: "alimentacao-ia-alimentar",
-        youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_ALIMENTACAO_IA"
+        title: "Transações",
+        description: "Aprenda a lançar, revisar e interpretar suas finanças dentro da plataforma.",
+        duration: "8 min",
+        level: "Essencial",
+        videoPlaceholder: "transacoes",
+        youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_TRANSACOES"
       },
       {
         title: "Como acompanhar proteínas",
@@ -179,6 +179,41 @@ function PlayIcon() {
   return (
     <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/15 shadow-[0_0_30px_rgba(139,92,246,0.45)] backdrop-blur-md transition duration-300 group-hover:scale-110 group-hover:bg-primary">
       <span className="ml-1 h-0 w-0 border-y-[8px] border-l-[13px] border-y-transparent border-l-white" />
+    </span>
+  );
+}
+
+function MoneyIcon() {
+  return (
+    <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/15 shadow-[0_0_30px_rgba(139,92,246,0.45)] backdrop-blur-md transition duration-300 group-hover:scale-110 group-hover:bg-primary">
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        className="h-6 w-6 text-white drop-shadow-[0_0_10px_rgba(34,211,238,0.55)]"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4.5 7.75h15a1.75 1.75 0 0 1 1.75 1.75v8a1.75 1.75 0 0 1-1.75 1.75h-15a1.75 1.75 0 0 1-1.75-1.75v-8A1.75 1.75 0 0 1 4.5 7.75Z"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M7 7.75V6.5A1.75 1.75 0 0 1 8.75 4.75h10"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M12 16.25a2.75 2.75 0 1 0 0-5.5 2.75 2.75 0 0 0 0 5.5Z"
+          stroke="currentColor"
+          strokeWidth="1.8"
+        />
+        <path d="M6.75 13.5h.01M17.25 13.5h.01" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+      </svg>
     </span>
   );
 }
@@ -403,7 +438,7 @@ export default function SuportePage() {
                       <div className="absolute bottom-4 right-4 rounded-full border border-white/15 bg-slate-950/60 px-3 py-1 text-xs font-semibold text-white backdrop-blur-md">
                         {tutorial.duration}
                       </div>
-                      <PlayIcon />
+                      {tutorial.title === "Transações" ? <MoneyIcon /> : <PlayIcon />}
                     </div>
                     <div className="space-y-4 p-5">
                       <div className="space-y-2">
