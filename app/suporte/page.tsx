@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 type Tutorial = {
+  id: number;
   title: string;
   description: string;
   duration: string;
   youtubeEmbedUrl: string;
+  videoUrl?: string;
 };
 
 type TutorialCategory = {
@@ -25,11 +27,13 @@ const tutorialCategories: TutorialCategory[] = [
     eyebrow: "Movimentações e registros",
     accent: "from-amber-400 via-orange-500 to-cyan-400",
     tutorial: {
+      id: 1,
       title: "Transações",
       description:
         "Veja o tutorial principal para cadastrar, revisar e manter suas transações sempre atualizadas.",
       duration: "6 min",
       youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_TRANSACOES",
+      videoUrl: "https://youtu.be/NwOJ_nVuyJM",
     },
   },
   {
@@ -38,11 +42,13 @@ const tutorialCategories: TutorialCategory[] = [
     eyebrow: "Organização diária",
     accent: "from-sky-400 via-blue-500 to-violet-500",
     tutorial: {
+      id: 2,
       title: "Agenda",
       description:
         "Aprenda a organizar horários, compromissos e visualizações da agenda para manter sua rotina sob controle.",
       duration: "5 min",
       youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_AGENDA",
+      videoUrl: "https://youtu.be/yhz2E--buL0",
     },
   },
   {
@@ -51,6 +57,7 @@ const tutorialCategories: TutorialCategory[] = [
     eyebrow: "Acompanhamento profissional",
     accent: "from-cyan-400 via-primary to-fuchsia-500",
     tutorial: {
+      id: 3,
       title: "Personal",
       description:
         "Conheça o tutorial principal para acompanhar alunos, organizar atendimentos e centralizar informações do personal.",
@@ -64,6 +71,7 @@ const tutorialCategories: TutorialCategory[] = [
     eyebrow: "Rotina e performance",
     accent: "from-emerald-400 via-cyan-400 to-violet-500",
     tutorial: {
+      id: 4,
       title: "Treino",
       description:
         "Veja como criar e acompanhar treinos de forma simples, com foco em organização e progresso.",
@@ -77,6 +85,7 @@ const tutorialCategories: TutorialCategory[] = [
     eyebrow: "Nutrição inteligente",
     accent: "from-orange-400 via-rose-400 to-violet-500",
     tutorial: {
+      id: 5,
       title: "Alimentação",
       description:
         "Aprenda o fluxo principal para registrar refeições e consultar dados alimentares sem etapas desnecessárias.",
@@ -90,6 +99,7 @@ const tutorialCategories: TutorialCategory[] = [
     eyebrow: "Visão consolidada",
     accent: "from-violet-500 via-fuchsia-500 to-cyan-400",
     tutorial: {
+      id: 6,
       title: "Relatório Geral",
       description:
         "Entenda como visualizar indicadores consolidados e transformar os dados da plataforma em decisões rápidas.",
@@ -247,6 +257,15 @@ export default function SuportePage() {
   const totalCategories = tutorialCategories.length;
   const totalTutorials = tutorialCategories.length;
 
+  const handleWatchTutorial = (tutorial: Tutorial) => {
+    if (tutorial.videoUrl) {
+      window.open(tutorial.videoUrl, "_blank", "noopener,noreferrer");
+      return;
+    }
+
+    setSelectedTutorial(tutorial);
+  };
+
   return (
     <main className="min-h-screen overflow-hidden pb-20">
       <section className="section-shell relative py-8 md:py-10">
@@ -378,7 +397,7 @@ export default function SuportePage() {
             >
               <button
                 type="button"
-                onClick={() => setSelectedTutorial(category.tutorial)}
+                onClick={() => handleWatchTutorial(category.tutorial)}
                 className="block h-full w-full text-left"
                 aria-label={`Assistir aula: ${category.tutorial.title}`}
               >
