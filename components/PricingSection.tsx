@@ -17,14 +17,14 @@ const openWhatsAppCommercial = () => {
 };
 
 const normalFeatures = [
-  "Sistema completo de gestão pessoal",
-  "Controle financeiro detalhado com relatórios avançados",
-  "Planejamento de treinos com acompanhamento de evolução",
-  "Gestão alimentar com metas e monitoramento diário",
+  "Criação completa de treinos e rotina semanal",
+  "Divisão muscular, exercícios com GIFs e acompanhamento de constância",
+  "Diário alimentar com metas, proteínas, água e monitoramento diário",
   "Scanner de alimentos com inteligência artificial",
-  "Agenda inteligente com integração WhatsApp",
-  "Relatórios completos de desempenho",
-  "Organização total da sua vida em um único sistema",
+  "Dashboard visual para centralizar rotina, treino e alimentação",
+  "Lembretes automáticos para reduzir esquecimentos",
+  "Área Personal para organizar alunos, clientes e treinos",
+  "Acompanhamento da evolução para usuários e profissionais",
   "Suporte contínuo e melhorias constantes",
   "Sem contrato e sem fidelidade"
 ];
@@ -32,7 +32,7 @@ const normalFeatures = [
 const trialHighlights = [
   "7 dias grátis para validar a plataforma antes de assinar",
   "Ativação acompanhada pela equipe comercial no WhatsApp",
-  "Acesso ao plano completo durante o período de teste"
+  "Acesso ao plano completo, incluindo treinos, alimentação, IA e Área Personal"
 ];
 
 export default function PricingSection() {
@@ -43,7 +43,7 @@ export default function PricingSection() {
         <h2 className="text-3xl font-bold">Comece com 7 dias grátis e assine quando estiver pronto</h2>
         <p className="text-slate-400 max-w-2xl mx-auto">
           Teste o Gestão Pessoal com acompanhamento da equipe comercial. Depois do período gratuito, mantenha o
-          acesso completo por R$ 80,00/mês, sem contrato e sem fidelidade.
+          acesso completo para treino, alimentação, IA, rotina e Área Personal por R$ 80,00/mês.
         </p>
       </div>
 
@@ -66,8 +66,8 @@ export default function PricingSection() {
                 <p className="text-sm uppercase tracking-[0.2em] text-emerald-200">Plano de teste</p>
                 <h3 className="text-4xl font-extrabold text-white">7 dias grátis</h3>
                 <p className="text-slate-200">
-                  Fale com a equipe comercial para liberar seu acesso gratuito e conhecer todos os recursos antes da
-                  assinatura mensal.
+                  Fale com a equipe comercial para liberar seu acesso gratuito e validar treinos, alimentação, IA e
+                  acompanhamento antes da assinatura mensal.
                 </p>
               </div>
               <ul className="space-y-2 text-sm text-slate-100">
@@ -109,7 +109,8 @@ export default function PricingSection() {
                 <span className="text-slate-300 mb-2">/ mês</span>
               </div>
               <p className="text-slate-200 text-sm">
-                Plano único com acesso completo. Cancele quando quiser, sem contrato e sem fidelidade.
+                Plano único com acesso completo à experiência atual do sistema. Cancele quando quiser, sem contrato e sem
+                fidelidade.
               </p>
             </div>
             <ul className="space-y-2 text-sm text-slate-200">
@@ -138,7 +139,7 @@ export default function PricingSection() {
               </button>
             </div>
             <div className="text-xs text-slate-200/80 leading-relaxed">
-              Bônus: vídeos + configuração guiada + templates de rotina + automações prontas no WhatsApp.
+              Bônus: vídeos + configuração guiada + organização de rotina + automações e lembretes inteligentes.
             </div>
           </div>
         </motion.div>

@@ -5,9 +5,9 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Gestão Pessoal - Controle sua vida em um único sistema",
+  title: "Gestão Pessoal - Controle sua evolução em um único sistema",
   description:
-    "Sistema SaaS para organizar finanças, rotina, treinos e alimentação com IA e lembretes inteligentes."
+    "Sistema SaaS para organizar treinos, alimentação, rotina, IA, lembretes inteligentes e acompanhamento Personal."
 };
 
 export default function RootLayout({

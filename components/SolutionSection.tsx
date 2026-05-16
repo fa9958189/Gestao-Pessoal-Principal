@@ -5,24 +5,24 @@ import { CalendarIcon, DumbbellIcon, MessageIcon, PlateIcon } from "./icons";
 
 const solutions = [
   {
-    title: "Controle Financeiro",
-    desc: "Fluxo de caixa, cartões, metas e categorias automáticas com alertas de risco.",
-    icon: <CalendarIcon className="w-7 h-7" />
-  },
-  {
-    title: "Agenda com WhatsApp",
-    desc: "Confirmação de presença, reagendamento e lembretes automáticos sem esforço.",
-    icon: <MessageIcon className="w-7 h-7 text-accent" />
-  },
-  {
-    title: "Rotina de Treino",
-    desc: "Planos semanais com acompanhamento de constância e microvitórias diárias.",
+    title: "Treinos completos",
+    desc: "Crie rotinas com divisão muscular, exercícios com GIFs, organização semanal, acompanhamento e controle de constância.",
     icon: <DumbbellIcon className="w-7 h-7 text-primary" />
   },
   {
-    title: "Gestão Alimentar",
-    desc: "Cardápios dinâmicos, macros automáticos e feedback do prato em segundos.",
+    title: "Alimentação inteligente",
+    desc: "Registre refeições, acompanhe proteínas, água e metas nutricionais com diário alimentar e scanner IA.",
     icon: <PlateIcon className="w-7 h-7 text-emerald-400" />
+  },
+  {
+    title: "Rotina com lembretes",
+    desc: "Receba alertas automáticos para treinos, hidratação, alimentação e compromissos importantes da rotina.",
+    icon: <MessageIcon className="w-7 h-7 text-accent" />
+  },
+  {
+    title: "Área Personal",
+    desc: "Organize alunos, visualize informações, gerencie treinos e acompanhe evolução com mais controle profissional.",
+    icon: <CalendarIcon className="w-7 h-7" />
   }
 ];
 
@@ -32,10 +32,10 @@ export default function SolutionSection() {
       <div className="flex items-center justify-between mb-8">
         <div>
           <p className="text-sm text-primary uppercase tracking-[0.2em]">Solução completa</p>
-          <h2 className="text-3xl font-bold">Cada área da sua vida em alta performance</h2>
+          <h2 className="text-3xl font-bold">Treino, alimentação e acompanhamento em alta performance</h2>
         </div>
         <div className="hidden md:block text-slate-400 max-w-sm text-sm">
-          Zero curva de aprendizado. Tudo organizado em cards inteligentes com animações ao passar o mouse.
+          Um painel central para evoluir com clareza, reduzir tarefas manuais e manter a rotina sempre visível.
         </div>
       </div>
       <div className="grid md:grid-cols-2 gap-6">
@@ -54,7 +54,7 @@ export default function SolutionSection() {
               <div className="space-y-2">
                 <h3 className="text-xl font-semibold text-white">{solution.title}</h3>
                 <p className="text-slate-300 text-sm leading-relaxed">{solution.desc}</p>
-                <div className="text-xs text-primary/80 uppercase tracking-[0.2em]">Automatizado</div>
+                <div className="text-xs text-primary/80 uppercase tracking-[0.2em]">Centralizado</div>
               </div>
             </div>
           </motion.div>

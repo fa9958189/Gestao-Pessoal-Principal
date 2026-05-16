@@ -5,9 +5,9 @@ import { SparklesIcon } from "./icons";
 import AnimatedDashboard from "./AnimatedDashboard";
 
 const stats = [
-  { label: "Fluxo de caixa", value: "+R$ 14.200", detail: "últimos 30 dias" },
-  { label: "Tarefas concluídas", value: "92%", detail: "rotina sob controle" },
-  { label: "Alertas enviados", value: "128", detail: "WhatsApp inteligente" }
+  { label: "Treinos", value: "GIFs", detail: "divisão muscular e rotina semanal" },
+  { label: "Alimentação", value: "Macros", detail: "proteínas, água e metas diárias" },
+  { label: "Área Personal", value: "Alunos", detail: "acompanhamento profissional" }
 ];
 
 export default function Hero() {
@@ -16,15 +16,15 @@ export default function Hero() {
       <div className="space-y-6">
         <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-primary/10 text-primary text-sm">
           <SparklesIcon className="w-4 h-4" />
-          <span>Nova geração de produtividade pessoal</span>
+          <span>Plataforma inteligente de treino, alimentação e rotina</span>
         </div>
         <div className="space-y-3">
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-glow">
-            Controle sua vida em um único sistema
+            Controle sua evolução em um único sistema
           </h1>
           <p className="text-lg text-slate-300 max-w-xl">
-            Organize dinheiro, rotina, treinos e alimentação com um cockpit visual, lembretes automáticos e
-            IA que pensa por você.
+            Organize treinos, alimentação, rotina e acompanhamento de alunos com um painel visual, lembretes automáticos
+            e IA para acelerar registros e decisões do dia a dia.
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3">
@@ -33,18 +33,18 @@ export default function Hero() {
             href="https://wa.me/5563992393705"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Abrir conversa no WhatsApp para ter controle agora"
+            aria-label="Abrir conversa no WhatsApp para conhecer o Gestão Pessoal"
           >
-            Quero ter controle agora
+            Quero conhecer o sistema
           </a>
           <div className="flex gap-4 text-sm text-slate-400">
             <div>
-              <p className="font-semibold text-slate-100">Integração WhatsApp</p>
-              <p>Alertas e interações em tempo real</p>
+              <p className="font-semibold text-slate-100">Treinos completos</p>
+              <p>GIFs, divisão muscular e constância</p>
             </div>
             <div>
-              <p className="font-semibold text-slate-100">IA nutricional</p>
-              <p>Reconhece pratos e monta dieta</p>
+              <p className="font-semibold text-slate-100">IA alimentar</p>
+              <p>Scanner, macros e metas nutricionais</p>
             </div>
           </div>
         </div>

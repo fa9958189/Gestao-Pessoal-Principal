@@ -14,14 +14,14 @@ const panelVariants = {
 
 const notifications = [
   {
-    name: "WhatsApp - Treino",
-    message: "Seu treino de peito começa às 18h. Confirma presença?",
+    name: "Treino de hoje",
+    message: "Peito e tríceps às 18h. Abra a ficha, veja os GIFs e confirme quando concluir.",
     time: "agora"
   },
   {
-    name: "Agenda - Nutrição",
-    message: "Reunião de ajustes do cardápio amanhã às 9h.",
-    time: "2 dias antes"
+    name: "Meta alimentar",
+    message: "Faltam proteína e água para fechar sua meta diária.",
+    time: "hoje"
   }
 ];
 
@@ -45,9 +45,9 @@ export default function AnimatedDashboard() {
         </div>
         <div className="grid grid-cols-3 gap-3 mb-4">
           {[
-            { label: "Saldo e metas", value: "R$ 18.450" },
+            { label: "Treino da semana", value: "5 dias" },
             { label: "Rotina concluída", value: "92%" },
-            { label: "Calorias hoje", value: "1.460" }
+            { label: "Proteína hoje", value: "128g" }
           ].map((item, i) => (
             <motion.div
               key={item.label}
@@ -75,8 +75,8 @@ export default function AnimatedDashboard() {
           >
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm text-white font-semibold">Fluxo financeiro</p>
-                <p className="text-slate-300 text-sm">Receitas, despesas e metas automáticas.</p>
+                <p className="text-sm text-white font-semibold">Evolução visual</p>
+                <p className="text-slate-300 text-sm">Treinos, metas, macros e constância centralizados.</p>
               </div>
               <LightningIcon className="w-10 h-10 text-white" />
             </div>
@@ -88,7 +88,7 @@ export default function AnimatedDashboard() {
                 transition={{ duration: 1.2, ease: "easeInOut" }}
               />
             </div>
-            <p className="text-xs text-slate-300 mt-2">Meta mensal alcançada em 78%.</p>
+            <p className="text-xs text-slate-300 mt-2">Semana organizada em 78%.</p>
           </motion.div>
           <motion.div
             className="rounded-xl bg-gradient-to-r from-accent/20 to-white/0 p-4 border border-white/10"
@@ -99,8 +99,8 @@ export default function AnimatedDashboard() {
           >
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm font-semibold text-white">WhatsApp 24/7</p>
-                <p className="text-slate-300 text-sm">Alertas, confirmações e lembretes automáticos.</p>
+                <p className="text-sm font-semibold text-white">Lembretes inteligentes</p>
+                <p className="text-slate-300 text-sm">Alertas automáticos para treino, água e rotina.</p>
               </div>
               <MessageIcon className="w-8 h-8 text-accent" />
             </div>
