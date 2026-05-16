@@ -12,6 +12,7 @@ type Tutorial = {
 
 type TutorialCategory = {
   name: string;
+  step: string;
   eyebrow: string;
   accent: string;
   tutorial: Tutorial;
@@ -19,19 +20,21 @@ type TutorialCategory = {
 
 const tutorialCategories: TutorialCategory[] = [
   {
-    name: "Usuários",
-    eyebrow: "Acesso e gestão",
-    accent: "from-fuchsia-500 via-violet-500 to-indigo-500",
+    name: "Transações",
+    step: "1️⃣",
+    eyebrow: "Movimentações e registros",
+    accent: "from-amber-400 via-orange-500 to-cyan-400",
     tutorial: {
-      title: "Usuários",
+      title: "Transações",
       description:
-        "Veja como gerenciar cadastros, permissões e informações essenciais dos usuários em uma única aula.",
-      duration: "5 min",
-      youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_USUARIOS",
+        "Veja o tutorial principal para cadastrar, revisar e manter suas transações sempre atualizadas.",
+      duration: "6 min",
+      youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_TRANSACOES",
     },
   },
   {
     name: "Agenda",
+    step: "2️⃣",
     eyebrow: "Organização diária",
     accent: "from-sky-400 via-blue-500 to-violet-500",
     tutorial: {
@@ -44,6 +47,7 @@ const tutorialCategories: TutorialCategory[] = [
   },
   {
     name: "Personal",
+    step: "3️⃣",
     eyebrow: "Acompanhamento profissional",
     accent: "from-cyan-400 via-primary to-fuchsia-500",
     tutorial: {
@@ -56,6 +60,7 @@ const tutorialCategories: TutorialCategory[] = [
   },
   {
     name: "Treino",
+    step: "4️⃣",
     eyebrow: "Rotina e performance",
     accent: "from-emerald-400 via-cyan-400 to-violet-500",
     tutorial: {
@@ -68,6 +73,7 @@ const tutorialCategories: TutorialCategory[] = [
   },
   {
     name: "Alimentação",
+    step: "5️⃣",
     eyebrow: "Nutrição inteligente",
     accent: "from-orange-400 via-rose-400 to-violet-500",
     tutorial: {
@@ -80,6 +86,7 @@ const tutorialCategories: TutorialCategory[] = [
   },
   {
     name: "Relatório Geral",
+    step: "6️⃣",
     eyebrow: "Visão consolidada",
     accent: "from-violet-500 via-fuchsia-500 to-cyan-400",
     tutorial: {
@@ -88,18 +95,6 @@ const tutorialCategories: TutorialCategory[] = [
         "Entenda como visualizar indicadores consolidados e transformar os dados da plataforma em decisões rápidas.",
       duration: "7 min",
       youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_RELATORIO_GERAL",
-    },
-  },
-  {
-    name: "Transações",
-    eyebrow: "Movimentações e registros",
-    accent: "from-amber-400 via-orange-500 to-cyan-400",
-    tutorial: {
-      title: "Transações",
-      description:
-        "Veja o tutorial principal para cadastrar, revisar e manter suas transações sempre atualizadas.",
-      duration: "6 min",
-      youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_TRANSACOES",
     },
   },
 ];
@@ -329,33 +324,24 @@ export default function SuportePage() {
                 </span>
               </div>
               <div className="space-y-3">
-                {tutorialCategories
-                  .filter((category) =>
-                    [
-                      "Usuários",
-                      "Treino",
-                      "Alimentação",
-                      "Transações",
-                    ].includes(category.name),
-                  )
-                  .map((category, index) => (
-                    <div
-                      key={category.name}
-                      className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-3"
-                    >
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-sm font-bold text-primary">
-                        {index + 1}
-                      </span>
-                      <div>
-                        <p className="font-semibold text-white">
-                          {category.name}
-                        </p>
-                        <p className="text-xs text-slate-400">
-                          1 tutorial principal
-                        </p>
-                      </div>
+                {tutorialCategories.map((category) => (
+                  <div
+                    key={category.name}
+                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-3"
+                  >
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-primary/35 bg-primary/15 text-sm font-bold text-white shadow-[0_0_24px_rgba(139,92,246,0.28)]">
+                      {category.step}
+                    </span>
+                    <div>
+                      <p className="font-semibold text-white">
+                        {category.name}
+                      </p>
+                      <p className="text-xs text-slate-400">
+                        1 tutorial principal
+                      </p>
                     </div>
-                  ))}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -401,6 +387,9 @@ export default function SuportePage() {
                     className={`absolute inset-0 bg-gradient-to-br ${category.accent} opacity-30 transition duration-300 group-hover:opacity-45`}
                   />
                   <div className="absolute inset-0 grid-pattern opacity-25" />
+                  <div className="absolute left-4 top-4 rounded-full border border-primary/40 bg-primary/15 px-3 py-1 text-sm font-bold text-white shadow-[0_0_26px_rgba(139,92,246,0.35)] backdrop-blur-md">
+                    {category.step}
+                  </div>
                   <div className="absolute bottom-4 right-4 rounded-full border border-white/15 bg-slate-950/60 px-3 py-1 text-xs font-semibold text-white backdrop-blur-md">
                     {category.tutorial.duration}
                   </div>
