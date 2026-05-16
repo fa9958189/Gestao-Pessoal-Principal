@@ -5,19 +5,19 @@ import { FireIcon } from "./icons";
 
 const problems = [
   {
-    title: "Dinheiro escapando",
-    desc: "Boletos atrasados, cartões sem controle e zero visibilidade do fluxo de caixa.",
-    highlight: "-32%" 
+    title: "Treino sem direção",
+    desc: "Sem ficha clara, divisão muscular, demonstração visual e acompanhamento, a constância vira tentativa e erro.",
+    highlight: "sem plano"
   },
   {
-    title: "Rotina bagunçada",
-    desc: "Compromissos, entregas e hábitos se perdem entre notificações e anotações soltas.",
-    highlight: "8 apps" 
+    title: "Alimentação no escuro",
+    desc: "Refeições, água, proteínas e metas ficam espalhadas, dificultando enxergar o que falta para evoluir.",
+    highlight: "sem macros"
   },
   {
-    title: "Treino abandonado",
-    desc: "Sem lembretes, sem feedback e sem métricas. Resultado: abandono e frustração.",
-    highlight: "0 constância"
+    title: "Alunos difíceis de acompanhar",
+    desc: "Para personal trainers, controlar clientes, treinos e evolução sem uma central organizada consome tempo e limita escala.",
+    highlight: "pouco controle"
   }
 ];
 
@@ -41,7 +41,7 @@ export default function ProblemSection() {
               </div>
             </div>
             <p className="text-slate-300 text-sm leading-relaxed">{problem.desc}</p>
-            <div className="mt-4 text-xs uppercase tracking-wide text-red-300/80">Caos identificado</div>
+            <div className="mt-4 text-xs uppercase tracking-wide text-red-300/80">Gargalo identificado</div>
           </motion.div>
         ))}
       </div>

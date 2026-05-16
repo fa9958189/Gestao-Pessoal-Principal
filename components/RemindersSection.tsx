@@ -5,21 +5,21 @@ import { CalendarIcon, MessageIcon } from "./icons";
 
 const reminders = [
   {
-    title: "Agenda",
-    timing: "2 dias antes + no dia",
-    desc: "Confirmação automática com link de reagendamento e resposta pelo WhatsApp.",
+    title: "Treino programado",
+    timing: "No dia e no horário",
+    desc: "Alertas para abrir a ficha, seguir a rotina semanal e manter constância nos treinos.",
     accent: "#8B5CF6"
   },
   {
-    title: "Agenda diária",
-    timing: "Todos os dias, no horário",
-    desc: "Lembretes de rotina, hidratação, leitura ou qualquer hábito que você quiser.",
+    title: "Água e alimentação",
+    timing: "Durante o dia",
+    desc: "Lembretes para hidratação, refeições, proteína e metas nutricionais importantes.",
     accent: "#22D3EE"
   },
   {
-    title: "Semana de treino",
-    timing: "Domingo à noite",
-    desc: "Resumo do plano semanal com botões para confirmar treinos e receber variações.",
+    title: "Acompanhamento Personal",
+    timing: "Rotina de alunos",
+    desc: "Organização para visualizar alunos, acompanhar evolução e manter treinos sob controle.",
     accent: "#22c55e"
   }
 ];
@@ -31,7 +31,7 @@ export default function RemindersSection() {
         <CalendarIcon className="w-6 h-6 text-primary" />
         <div>
           <p className="text-sm text-primary uppercase tracking-[0.2em]">Lembretes inteligentes</p>
-          <h2 className="text-3xl font-bold">Zero esquecimento com a linha do tempo automática</h2>
+          <h2 className="text-3xl font-bold">Rotina em movimento com alertas automáticos</h2>
         </div>
       </div>
       <div className="space-y-6">
@@ -58,13 +58,13 @@ export default function RemindersSection() {
               transition={{ delay: 0.3 + index * 0.05, duration: 0.5 }}
               className="flex-1 grid md:grid-cols-3 gap-3"
             >
-              {["Mensagem enviada", "Confirmação", "Reforço no dia"].map((text, i) => (
+              {["Alerta enviado", "Ação registrada", "Evolução visível"].map((text) => (
                 <div key={text} className="glass rounded-lg p-3 border border-white/10">
                   <div className="flex items-center gap-2 text-sm font-semibold">
                     <MessageIcon className="w-4 h-4 text-accent" />
                     {text}
                   </div>
-                  <p className="text-xs text-slate-400 mt-1">WhatsApp com botões de ação.</p>
+                  <p className="text-xs text-slate-400 mt-1">Automação para reduzir esquecimentos.</p>
                 </div>
               ))}
             </motion.div>

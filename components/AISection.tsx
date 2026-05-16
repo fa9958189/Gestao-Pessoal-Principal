@@ -8,18 +8,18 @@ export default function AISection() {
     <section className="section-shell py-16">
       <div className="grid md:grid-cols-2 gap-8 items-center">
         <div className="space-y-4">
-          <p className="text-sm text-primary uppercase tracking-[0.2em]">IA nutricional</p>
-          <h2 className="text-3xl font-bold leading-tight">Escaneie o prato e receba macros em segundos</h2>
+          <p className="text-sm text-primary uppercase tracking-[0.2em]">IA do sistema</p>
+          <h2 className="text-3xl font-bold leading-tight">Scanner inteligente para acelerar seu diário alimentar</h2>
           <p className="text-slate-300 text-lg">
-            A IA do Gestão Pessoal interpreta a foto, reconhece proteínas, carboidratos, calorias e sugere ajustes
-            para você bater metas sem pensar. Tudo em português, direto no WhatsApp.
+            A IA do Gestão Pessoal ajuda a interpretar refeições, estimar calorias e macronutrientes, organizar registros
+            e transformar o acompanhamento nutricional em uma experiência mais rápida e visual.
           </p>
           <div className="flex gap-4 text-sm text-slate-400">
             <div className="flex items-center gap-2">
-              <RadarIcon className="w-5 h-5 text-accent" /> detecção imediata
+              <RadarIcon className="w-5 h-5 text-accent" /> leitura inteligente
             </div>
             <div className="flex items-center gap-2">
-              <PlateIcon className="w-5 h-5 text-emerald-400" /> macros calculados
+              <PlateIcon className="w-5 h-5 text-emerald-400" /> macros e metas
             </div>
           </div>
         </div>
@@ -35,7 +35,7 @@ export default function AISection() {
             <div className="absolute -right-6 -bottom-6 w-24 h-24 bg-primary/30 rounded-full blur-3xl" />
             <div className="flex items-center justify-between mb-4">
               <div>
-                <p className="text-sm text-slate-300">Escaneando alimento</p>
+                <p className="text-sm text-slate-300">Escaneando refeição</p>
                 <h3 className="text-xl font-semibold">Frango + Arroz + Salada</h3>
               </div>
               <span className="px-3 py-1 rounded-full text-xs bg-accent/20 text-accent font-semibold">IA ativa</span>
@@ -70,17 +70,17 @@ export default function AISection() {
                   92%
                 </div>
                 <div>
-                  <p className="font-semibold">Prato aprovado</p>
-                  <p className="text-slate-400 text-xs">Proteína batida, faltam 32g de carboidrato para a meta.</p>
+                  <p className="font-semibold">Meta alimentar monitorada</p>
+                  <p className="text-slate-400 text-xs">Proteína registrada, água e macros visíveis para fechar o dia.</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center text-primary font-bold">
-                  +15
+                  IA
                 </div>
                 <div>
-                  <p className="font-semibold">Sugestões de ajuste</p>
-                  <p className="text-slate-400 text-xs">Adicione batata doce ou incremente a salada com grão-de-bico.</p>
+                  <p className="font-semibold">Registro mais rápido</p>
+                  <p className="text-slate-400 text-xs">Use o scanner para acelerar lançamentos e manter histórico alimentar.</p>
                 </div>
               </div>
             </div>

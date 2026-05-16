@@ -27,16 +27,16 @@ export default function FinalCTA({ onOpenOverlay }: FinalCTAProps) {
 
         <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center gap-5 sm:gap-6">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-primary shadow-[0_0_24px_rgba(139,92,246,0.16)] sm:text-sm sm:normal-case sm:tracking-normal">
-            <SparklesIcon className="h-4 w-4" /> Você a um passo do controle total
+            <SparklesIcon className="h-4 w-4" /> Você a um passo de evoluir com mais controle
           </div>
 
           <div className="space-y-4">
             <h2 className="text-balance text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-5xl">
-              Tome decisões em minutos, não em dias. Ative seu Gestão Pessoal agora.
+              Transforme treino, alimentação e acompanhamento em uma rotina visual e inteligente.
             </h2>
             <p className="mx-auto max-w-2xl text-base leading-7 text-slate-300 md:text-lg">
-              Um único cockpit para finanças, rotina, treinos e alimentação. Sem contratos, sem fricção, com IA e
-              WhatsApp a seu favor.
+              Um único cockpit para treinos, diário alimentar, IA, lembretes e Área Personal. Mais clareza para usuários e
+              mais organização para profissionais.
             </p>
           </div>
 
