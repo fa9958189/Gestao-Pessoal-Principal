@@ -77,6 +77,7 @@ const tutorialCategories: TutorialCategory[] = [
         "Veja como criar e acompanhar treinos de forma simples, com foco em organização e progresso.",
       duration: "6 min",
       youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_TREINO",
+      videoUrl: "https://youtu.be/e6mysevG_-g",
     },
   },
   {
@@ -91,6 +92,7 @@ const tutorialCategories: TutorialCategory[] = [
         "Aprenda o fluxo principal para registrar refeições e consultar dados alimentares sem etapas desnecessárias.",
       duration: "5 min",
       youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_ALIMENTACAO",
+      videoUrl: "https://youtu.be/xniL6Of4Kto",
     },
   },
   {
@@ -105,6 +107,7 @@ const tutorialCategories: TutorialCategory[] = [
         "Entenda como visualizar indicadores consolidados e transformar os dados da plataforma em decisões rápidas.",
       duration: "7 min",
       youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_RELATORIO_GERAL",
+      videoUrl: "https://youtu.be/hmocbENCZxA",
     },
   },
 ];
