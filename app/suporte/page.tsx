@@ -22,12 +22,27 @@ type TutorialCategory = {
 
 const tutorialCategories: TutorialCategory[] = [
   {
-    name: "Transações",
+    name: "Usuário",
     step: "1️⃣",
+    eyebrow: "Gestão de acesso",
+    accent: "from-cyan-400 via-violet-500 to-emerald-400",
+    tutorial: {
+      id: 1,
+      title: "Usuário",
+      description:
+        "Aprenda a cadastrar, editar e gerenciar usuários dentro da plataforma de forma rápida e organizada.",
+      duration: "5 min",
+      youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_USUARIO",
+      videoUrl: "https://youtu.be/mr4EY2viapU",
+    },
+  },
+  {
+    name: "Transações",
+    step: "2️⃣",
     eyebrow: "Movimentações e registros",
     accent: "from-amber-400 via-orange-500 to-cyan-400",
     tutorial: {
-      id: 1,
+      id: 2,
       title: "Transações",
       description:
         "Veja o tutorial principal para cadastrar, revisar e manter suas transações sempre atualizadas.",
@@ -38,31 +53,17 @@ const tutorialCategories: TutorialCategory[] = [
   },
   {
     name: "Agenda",
-    step: "2️⃣",
+    step: "3️⃣",
     eyebrow: "Organização diária",
     accent: "from-sky-400 via-blue-500 to-violet-500",
     tutorial: {
-      id: 2,
+      id: 3,
       title: "Agenda",
       description:
         "Aprenda a organizar horários, compromissos e visualizações da agenda para manter sua rotina sob controle.",
       duration: "5 min",
       youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_AGENDA",
       videoUrl: "https://youtu.be/yhz2E--buL0",
-    },
-  },
-  {
-    name: "Personal",
-    step: "3️⃣",
-    eyebrow: "Acompanhamento profissional",
-    accent: "from-cyan-400 via-primary to-fuchsia-500",
-    tutorial: {
-      id: 3,
-      title: "Personal",
-      description:
-        "Conheça o tutorial principal para acompanhar alunos, organizar atendimentos e centralizar informações do personal.",
-      duration: "6 min",
-      youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_PERSONAL",
     },
   },
   {
@@ -111,18 +112,17 @@ const tutorialCategories: TutorialCategory[] = [
     },
   },
   {
-    name: "Usuário",
+    name: "Personal",
     step: "7️⃣",
-    eyebrow: "Gestão de acesso",
-    accent: "from-cyan-400 via-violet-500 to-emerald-400",
+    eyebrow: "Acompanhamento profissional",
+    accent: "from-cyan-400 via-primary to-fuchsia-500",
     tutorial: {
       id: 7,
-      title: "Usuário",
+      title: "Personal",
       description:
-        "Aprenda a cadastrar, editar e gerenciar usuários dentro da plataforma de forma rápida e organizada.",
-      duration: "5 min",
-      youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_USUARIO",
-      videoUrl: "https://youtu.be/mr4EY2viapU",
+        "Conheça o tutorial principal para acompanhar alunos, organizar atendimentos e centralizar informações do personal.",
+      duration: "6 min",
+      youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_PERSONAL",
     },
   },
 ];
