@@ -1,178 +1,107 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 type Tutorial = {
   title: string;
   description: string;
   duration: string;
-  level: string;
-  videoPlaceholder: string;
   youtubeEmbedUrl: string;
 };
 
 type TutorialCategory = {
   name: string;
   eyebrow: string;
-  description: string;
   accent: string;
-  tutorials: Tutorial[];
+  tutorial: Tutorial;
 };
 
 const tutorialCategories: TutorialCategory[] = [
   {
-    name: "Financeiro",
-    eyebrow: "Controle e resultados",
-    description: "Aprenda a lançar, revisar e interpretar suas finanças dentro da plataforma.",
-    accent: "from-violet-500 via-fuchsia-500 to-cyan-400",
-    tutorials: [
-      {
-        title: "Como cadastrar transações",
-        description: "Veja como registrar entradas, saídas e manter seu histórico financeiro organizado.",
-        duration: "6 min",
-        level: "Iniciante",
-        videoPlaceholder: "financeiro-cadastrar-transacoes",
-        youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_FINANCEIRO_TRANSACOES"
-      },
-      {
-        title: "Como fechar o mês",
-        description: "Entenda o fluxo ideal para revisar gastos, receitas e consolidar seu mês.",
-        duration: "8 min",
-        level: "Essencial",
-        videoPlaceholder: "financeiro-fechar-mes",
-        youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_FINANCEIRO_FECHAMENTO"
-      },
-      {
-        title: "Como acompanhar resultados",
-        description: "Use os indicadores para visualizar evolução, metas e pontos de melhoria.",
-        duration: "7 min",
-        level: "Intermediário",
-        videoPlaceholder: "financeiro-acompanhar-resultados",
-        youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_FINANCEIRO_RESULTADOS"
-      }
-    ]
-  },
-  {
-    name: "Treinos",
-    eyebrow: "Rotina e performance",
-    description: "Configure treinos, lembretes e transferências para manter consistência.",
-    accent: "from-emerald-400 via-cyan-400 to-violet-500",
-    tutorials: [
-      {
-        title: "Como criar um treino",
-        description: "Monte sua rotina de exercícios com organização, dias definidos e foco claro.",
-        duration: "5 min",
-        level: "Iniciante",
-        videoPlaceholder: "treinos-criar-treino",
-        youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_TREINOS_CRIAR"
-      },
-      {
-        title: "Como ativar lembretes",
-        description: "Configure alertas para não perder horários importantes da sua rotina física.",
-        duration: "4 min",
-        level: "Rápido",
-        videoPlaceholder: "treinos-ativar-lembretes",
-        youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_TREINOS_LEMBRETES"
-      },
-      {
-        title: "Como transferir treinos",
-        description: "Reorganize sessões quando precisar ajustar sua semana sem perder planejamento.",
-        duration: "6 min",
-        level: "Intermediário",
-        videoPlaceholder: "treinos-transferir-treinos",
-        youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_TREINOS_TRANSFERIR"
-      }
-    ]
-  },
-  {
-    name: "Alimentação",
-    eyebrow: "Nutrição inteligente",
-    description: "Registre refeições, use IA alimentar e acompanhe macronutrientes com clareza.",
-    accent: "from-orange-400 via-rose-400 to-violet-500",
-    tutorials: [
-      {
-        title: "Como registrar refeições",
-        description: "Aprenda a manter um diário alimentar simples, visual e fácil de consultar.",
-        duration: "5 min",
-        level: "Iniciante",
-        videoPlaceholder: "alimentacao-registrar-refeicoes",
-        youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_ALIMENTACAO_REFEICOES"
-      },
-      {
-        title: "Transações",
-        description: "Aprenda a lançar, revisar e interpretar suas finanças dentro da plataforma.",
-        duration: "8 min",
-        level: "Essencial",
-        videoPlaceholder: "transacoes",
-        youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_TRANSACOES"
-      },
-      {
-        title: "Como acompanhar proteínas",
-        description: "Veja onde analisar consumo diário e acompanhar sua meta de proteína.",
-        duration: "4 min",
-        level: "Essencial",
-        videoPlaceholder: "alimentacao-acompanhar-proteinas",
-        youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_ALIMENTACAO_PROTEINAS"
-      }
-    ]
+    name: "Usuários",
+    eyebrow: "Acesso e gestão",
+    accent: "from-fuchsia-500 via-violet-500 to-indigo-500",
+    tutorial: {
+      title: "Usuários",
+      description:
+        "Veja como gerenciar cadastros, permissões e informações essenciais dos usuários em uma única aula.",
+      duration: "5 min",
+      youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_USUARIOS",
+    },
   },
   {
     name: "Agenda",
     eyebrow: "Organização diária",
-    description: "Domine eventos e lembretes para manter compromissos sob controle.",
     accent: "from-sky-400 via-blue-500 to-violet-500",
-    tutorials: [
-      {
-        title: "Como criar eventos",
-        description: "Cadastre compromissos, organize horários e visualize sua rotina com facilidade.",
-        duration: "5 min",
-        level: "Iniciante",
-        videoPlaceholder: "agenda-criar-eventos",
-        youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_AGENDA_EVENTOS"
-      },
-      {
-        title: "Como funcionam os lembretes",
-        description: "Conheça o comportamento dos alertas e como usá-los para não perder tarefas.",
-        duration: "6 min",
-        level: "Essencial",
-        videoPlaceholder: "agenda-funcionam-lembretes",
-        youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_AGENDA_LEMBRETES"
-      }
-    ]
+    tutorial: {
+      title: "Agenda",
+      description:
+        "Aprenda a organizar horários, compromissos e visualizações da agenda para manter sua rotina sob controle.",
+      duration: "5 min",
+      youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_AGENDA",
+    },
   },
   {
-    name: "Conta e Assinatura",
-    eyebrow: "Perfil, segurança e plano",
-    description: "Gerencie sua conta, dados pessoais e informações relacionadas ao plano.",
-    accent: "from-fuchsia-500 via-violet-500 to-indigo-500",
-    tutorials: [
-      {
-        title: "Como alterar senha",
-        description: "Veja as etapas para manter sua conta protegida com uma nova senha.",
-        duration: "3 min",
-        level: "Rápido",
-        videoPlaceholder: "conta-alterar-senha",
-        youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_CONTA_SENHA"
-      },
-      {
-        title: "Como atualizar perfil",
-        description: "Aprenda a revisar seus dados para personalizar melhor sua experiência.",
-        duration: "4 min",
-        level: "Iniciante",
-        videoPlaceholder: "conta-atualizar-perfil",
-        youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_CONTA_PERFIL"
-      },
-      {
-        title: "Como funciona o plano",
-        description: "Entenda detalhes da assinatura, acesso à plataforma e próximos passos.",
-        duration: "6 min",
-        level: "Essencial",
-        videoPlaceholder: "conta-funciona-plano",
-        youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_CONTA_PLANO"
-      }
-    ]
-  }
+    name: "Personal",
+    eyebrow: "Acompanhamento profissional",
+    accent: "from-cyan-400 via-primary to-fuchsia-500",
+    tutorial: {
+      title: "Personal",
+      description:
+        "Conheça o tutorial principal para acompanhar alunos, organizar atendimentos e centralizar informações do personal.",
+      duration: "6 min",
+      youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_PERSONAL",
+    },
+  },
+  {
+    name: "Treino",
+    eyebrow: "Rotina e performance",
+    accent: "from-emerald-400 via-cyan-400 to-violet-500",
+    tutorial: {
+      title: "Treino",
+      description:
+        "Veja como criar e acompanhar treinos de forma simples, com foco em organização e progresso.",
+      duration: "6 min",
+      youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_TREINO",
+    },
+  },
+  {
+    name: "Alimentação",
+    eyebrow: "Nutrição inteligente",
+    accent: "from-orange-400 via-rose-400 to-violet-500",
+    tutorial: {
+      title: "Alimentação",
+      description:
+        "Aprenda o fluxo principal para registrar refeições e consultar dados alimentares sem etapas desnecessárias.",
+      duration: "5 min",
+      youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_ALIMENTACAO",
+    },
+  },
+  {
+    name: "Relatório Geral",
+    eyebrow: "Visão consolidada",
+    accent: "from-violet-500 via-fuchsia-500 to-cyan-400",
+    tutorial: {
+      title: "Relatório Geral",
+      description:
+        "Entenda como visualizar indicadores consolidados e transformar os dados da plataforma em decisões rápidas.",
+      duration: "7 min",
+      youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_RELATORIO_GERAL",
+    },
+  },
+  {
+    name: "Transações",
+    eyebrow: "Movimentações e registros",
+    accent: "from-amber-400 via-orange-500 to-cyan-400",
+    tutorial: {
+      title: "Transações",
+      description:
+        "Veja o tutorial principal para cadastrar, revisar e manter suas transações sempre atualizadas.",
+      duration: "6 min",
+      youtubeEmbedUrl: "https://www.youtube.com/embed/VIDEO_ID_TRANSACOES",
+    },
+  },
 ];
 
 function PlayIcon() {
@@ -212,13 +141,24 @@ function MoneyIcon() {
           stroke="currentColor"
           strokeWidth="1.8"
         />
-        <path d="M6.75 13.5h.01M17.25 13.5h.01" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+        <path
+          d="M6.75 13.5h.01M17.25 13.5h.01"
+          stroke="currentColor"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+        />
       </svg>
     </span>
   );
 }
 
-function VideoModal({ tutorial, onClose }: { tutorial: Tutorial; onClose: () => void }) {
+function VideoModal({
+  tutorial,
+  onClose,
+}: {
+  tutorial: Tutorial;
+  onClose: () => void;
+}) {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -264,32 +204,38 @@ function VideoModal({ tutorial, onClose }: { tutorial: Tutorial; onClose: () => 
             <div className="relative z-10 space-y-4 text-center">
               <PlayIcon />
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-200">Área preparada para embed</p>
-                <p className="mt-2 text-sm text-slate-300">Futuro embed YouTube: {tutorial.youtubeEmbedUrl}</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-200">
+                  Área preparada para embed
+                </p>
+                <p className="mt-2 text-sm text-slate-300">
+                  Futuro embed YouTube: {tutorial.youtubeEmbedUrl}
+                </p>
               </div>
             </div>
           </div>
 
           <div className="space-y-5 border-t border-white/10 p-6 lg:border-l lg:border-t-0">
             <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Assistir aula</p>
-              <h2 id="support-video-title" className="text-2xl font-extrabold text-white">
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+                Assistir aula
+              </p>
+              <h2
+                id="support-video-title"
+                className="text-2xl font-extrabold text-white"
+              >
                 {tutorial.title}
               </h2>
-              <p className="text-sm leading-6 text-slate-300">{tutorial.description}</p>
+              <p className="text-sm leading-6 text-slate-300">
+                {tutorial.description}
+              </p>
             </div>
-            <div className="grid grid-cols-2 gap-3 text-sm">
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                <p className="text-slate-500">Duração</p>
-                <p className="font-semibold text-white">{tutorial.duration}</p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                <p className="text-slate-500">Nível</p>
-                <p className="font-semibold text-white">{tutorial.level}</p>
-              </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm">
+              <p className="text-slate-500">Tempo estimado</p>
+              <p className="font-semibold text-white">{tutorial.duration}</p>
             </div>
             <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-4 text-sm text-cyan-50">
-              Este modal já está estruturado para receber um iframe do YouTube futuramente, sem redirecionar o usuário para fora da plataforma.
+              Este modal já está estruturado para receber um iframe do YouTube
+              futuramente, sem redirecionar o usuário para fora da plataforma.
             </div>
           </div>
         </div>
@@ -299,18 +245,21 @@ function VideoModal({ tutorial, onClose }: { tutorial: Tutorial; onClose: () => 
 }
 
 export default function SuportePage() {
-  const [selectedTutorial, setSelectedTutorial] = useState<Tutorial | null>(null);
-
-  const totalLessons = useMemo(
-    () => tutorialCategories.reduce((total, category) => total + category.tutorials.length, 0),
-    []
+  const [selectedTutorial, setSelectedTutorial] = useState<Tutorial | null>(
+    null,
   );
+
+  const totalCategories = tutorialCategories.length;
+  const totalTutorials = tutorialCategories.length;
 
   return (
     <main className="min-h-screen overflow-hidden pb-20">
       <section className="section-shell relative py-8 md:py-10">
         <nav className="flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-3 backdrop-blur-md sm:flex-row sm:items-center sm:justify-between">
-          <Link href="/" className="text-sm font-semibold text-slate-300 transition hover:text-white">
+          <Link
+            href="/"
+            className="text-sm font-semibold text-slate-300 transition hover:text-white"
+          >
             ← Voltar para a página inicial
           </Link>
           <a
@@ -337,18 +286,25 @@ export default function SuportePage() {
                 Central de conhecimento
               </div>
               <div className="space-y-4">
-                <h1 className="text-4xl font-extrabold leading-tight text-glow md:text-6xl">Central de Suporte</h1>
+                <h1 className="text-4xl font-extrabold leading-tight text-glow md:text-6xl">
+                  Central de Suporte
+                </h1>
                 <p className="max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
-                  Aprenda rapidamente como utilizar todas as funções do Gestão Pessoal e aproveite ao máximo a plataforma.
+                  Aprenda rapidamente como utilizar todas as funções do Gestão
+                  Pessoal e aproveite ao máximo a plataforma.
                 </p>
               </div>
               <div className="grid gap-3 sm:grid-cols-3">
                 <div className="rounded-2xl border border-white/10 bg-slate-950/40 p-4">
-                  <p className="text-2xl font-extrabold text-white">{totalLessons}</p>
-                  <p className="text-sm text-slate-400">aulas preparadas</p>
+                  <p className="text-2xl font-extrabold text-white">
+                    {totalTutorials}
+                  </p>
+                  <p className="text-sm text-slate-400">tutoriais</p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-slate-950/40 p-4">
-                  <p className="text-2xl font-extrabold text-white">5</p>
+                  <p className="text-2xl font-extrabold text-white">
+                    {totalCategories}
+                  </p>
                   <p className="text-sm text-slate-400">categorias</p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-slate-950/40 p-4">
@@ -361,23 +317,45 @@ export default function SuportePage() {
             <div className="rounded-[1.75rem] border border-white/10 bg-slate-950/50 p-5 shadow-card backdrop-blur-xl">
               <div className="mb-5 flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-semibold text-white">Trilha sugerida</p>
-                  <p className="text-xs text-slate-500">Comece pelos fundamentos</p>
+                  <p className="text-sm font-semibold text-white">
+                    Trilha sugerida
+                  </p>
+                  <p className="text-xs text-slate-500">
+                    Comece pelos fundamentos
+                  </p>
                 </div>
-                <span className="rounded-full bg-emerald-400/15 px-3 py-1 text-xs font-semibold text-emerald-200">Novo</span>
+                <span className="rounded-full bg-emerald-400/15 px-3 py-1 text-xs font-semibold text-emerald-200">
+                  Novo
+                </span>
               </div>
               <div className="space-y-3">
-                {tutorialCategories.slice(0, 4).map((category, index) => (
-                  <div key={category.name} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-3">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-sm font-bold text-primary">
-                      {index + 1}
-                    </span>
-                    <div>
-                      <p className="font-semibold text-white">{category.name}</p>
-                      <p className="text-xs text-slate-400">{category.tutorials.length} tutoriais disponíveis</p>
+                {tutorialCategories
+                  .filter((category) =>
+                    [
+                      "Usuários",
+                      "Treino",
+                      "Alimentação",
+                      "Transações",
+                    ].includes(category.name),
+                  )
+                  .map((category, index) => (
+                    <div
+                      key={category.name}
+                      className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-3"
+                    >
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-sm font-bold text-primary">
+                        {index + 1}
+                      </span>
+                      <div>
+                        <p className="font-semibold text-white">
+                          {category.name}
+                        </p>
+                        <p className="text-xs text-slate-400">
+                          1 tutorial principal
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </div>
             </div>
           </div>
@@ -391,7 +369,9 @@ export default function SuportePage() {
             Pesquisar ajuda ou tutoriais
           </label>
           <div className="relative flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-slate-950/60 text-slate-300">⌕</span>
+            <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-slate-950/60 text-slate-300">
+              ⌕
+            </span>
             <input
               id="support-search"
               type="search"
@@ -403,66 +383,70 @@ export default function SuportePage() {
         </div>
       </section>
 
-      <section className="section-shell space-y-12">
-        {tutorialCategories.map((category) => (
-          <div key={category.name} className="space-y-5">
-            <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-              <div className="space-y-2">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">{category.eyebrow}</p>
-                <h2 className="text-2xl font-extrabold text-white md:text-3xl">{category.name}</h2>
-                <p className="max-w-2xl text-sm leading-6 text-slate-400 md:text-base">{category.description}</p>
-              </div>
-              <span className="w-fit rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-slate-300">
-                {category.tutorials.length} aulas
-              </span>
-            </div>
-
-            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {category.tutorials.map((tutorial) => (
-                <article
-                  key={tutorial.title}
-                  className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] shadow-card transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-white/[0.06] hover:shadow-[0_0_45px_rgba(139,92,246,0.18)]"
-                >
-                  <button
-                    type="button"
-                    onClick={() => setSelectedTutorial(tutorial)}
-                    className="block w-full text-left"
-                    aria-label={`Assistir aula: ${tutorial.title}`}
-                  >
-                    <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-slate-950">
-                      <div className={`absolute inset-0 bg-gradient-to-br ${category.accent} opacity-30 transition duration-300 group-hover:opacity-45`} />
-                      <div className="absolute inset-0 grid-pattern opacity-25" />
-                      <div className="absolute left-4 top-4 rounded-full border border-white/15 bg-slate-950/60 px-3 py-1 text-xs font-semibold text-white backdrop-blur-md">
-                        {tutorial.level}
-                      </div>
-                      <div className="absolute bottom-4 right-4 rounded-full border border-white/15 bg-slate-950/60 px-3 py-1 text-xs font-semibold text-white backdrop-blur-md">
-                        {tutorial.duration}
-                      </div>
-                      {tutorial.title === "Transações" ? <MoneyIcon /> : <PlayIcon />}
-                    </div>
-                    <div className="space-y-4 p-5">
-                      <div className="space-y-2">
-                        <h3 className="text-lg font-bold text-white">{tutorial.title}</h3>
-                        <p className="text-sm leading-6 text-slate-400">{tutorial.description}</p>
-                      </div>
-                      <span className="inline-flex items-center justify-center rounded-xl border border-primary/35 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary transition group-hover:border-primary group-hover:bg-primary group-hover:text-white">
-                        Assistir aula
-                      </span>
-                    </div>
-                  </button>
-                </article>
-              ))}
-            </div>
-          </div>
-        ))}
+      <section className="section-shell">
+        <div className="grid gap-6 lg:grid-cols-2">
+          {tutorialCategories.map((category) => (
+            <article
+              key={category.name}
+              className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] shadow-card transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-white/[0.06] hover:shadow-[0_0_45px_rgba(139,92,246,0.18)]"
+            >
+              <button
+                type="button"
+                onClick={() => setSelectedTutorial(category.tutorial)}
+                className="block h-full w-full text-left"
+                aria-label={`Assistir aula: ${category.tutorial.title}`}
+              >
+                <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-slate-950">
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${category.accent} opacity-30 transition duration-300 group-hover:opacity-45`}
+                  />
+                  <div className="absolute inset-0 grid-pattern opacity-25" />
+                  <div className="absolute bottom-4 right-4 rounded-full border border-white/15 bg-slate-950/60 px-3 py-1 text-xs font-semibold text-white backdrop-blur-md">
+                    {category.tutorial.duration}
+                  </div>
+                  {category.name === "Transações" ? (
+                    <MoneyIcon />
+                  ) : (
+                    <PlayIcon />
+                  )}
+                </div>
+                <div className="space-y-4 p-5">
+                  <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+                    {category.eyebrow}
+                  </p>
+                  <div className="space-y-2">
+                    <h2 className="text-2xl font-extrabold text-white">
+                      {category.tutorial.title}
+                    </h2>
+                    <p className="text-sm leading-6 text-slate-400">
+                      {category.tutorial.description}
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="inline-flex items-center justify-center rounded-xl border border-primary/35 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary transition group-hover:border-primary group-hover:bg-primary group-hover:text-white">
+                      Assistir aula
+                    </span>
+                    <span className="rounded-xl border border-white/10 bg-slate-950/40 px-4 py-2 text-sm text-slate-300">
+                      {category.tutorial.duration} estimados
+                    </span>
+                  </div>
+                </div>
+              </button>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="section-shell pt-16">
         <div className="relative overflow-hidden rounded-[2rem] border border-emerald-400/20 bg-gradient-to-br from-emerald-400/15 via-primary/10 to-cyan-400/10 p-6 text-center shadow-[0_0_70px_rgba(16,185,129,0.12)] md:p-10">
           <div className="absolute inset-0 grid-pattern opacity-20" />
           <div className="relative z-10 mx-auto max-w-2xl space-y-5">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-200">Atendimento humano</p>
-            <h2 className="text-3xl font-extrabold text-white md:text-4xl">Não encontrou sua dúvida?</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-200">
+              Atendimento humano
+            </p>
+            <h2 className="text-3xl font-extrabold text-white md:text-4xl">
+              Não encontrou sua dúvida?
+            </h2>
             <p className="text-slate-300">Nossa equipe pode ajudar você.</p>
             <a
               href="https://wa.me/5563992393705?text=Ol%C3%A1!%20N%C3%A3o%20encontrei%20minha%20d%C3%BAvida%20na%20Central%20de%20Suporte%20do%20Gest%C3%A3o%20Pessoal."
@@ -476,7 +460,12 @@ export default function SuportePage() {
         </div>
       </section>
 
-      {selectedTutorial ? <VideoModal tutorial={selectedTutorial} onClose={() => setSelectedTutorial(null)} /> : null}
+      {selectedTutorial ? (
+        <VideoModal
+          tutorial={selectedTutorial}
+          onClose={() => setSelectedTutorial(null)}
+        />
+      ) : null}
     </main>
   );
 }
